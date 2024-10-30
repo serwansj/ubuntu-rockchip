@@ -31,19 +31,54 @@ index 00000000000..614736a019f
 +	model = "Rockchip RK3568 Evaluation Board";
 +	compatible = "rockchip,rk3568-evb", "rockchip,rk3568";
 +
-+	adc-keys {
++	config {
++		u-boot,dm-pre-reloc;
++		u-boot,boot-led = "red";
++	};
++
++
++	firefly_leds: leds {
++		status = "okay";
++		u-boot,dm-pre-reloc;
++		compatible = "gpio-leds";
++		pinctrl-names = "default";
++		pinctrl-0 =<&leds_gpio>;
++		blue_led: blue-led {
++			u-boot,dm-pre-reloc;
++			label = "blue";
++			default-state = "on";
++			gpios = <&gpio1 RK_PD5 GPIO_ACTIVE_HIGH>;//blue led
++		};
++
++		red_led: red-led {
++			u-boot,dm-pre-reloc;
++			label = "red";
++			default-state = "off";
++			gpios = <&gpio3 RK_PB2 GPIO_ACTIVE_HIGH>;//red led
++		};
++
++		green_led: green-led {
++			u-boot,dm-pre-reloc;
++			label = "green"; 
++			default-state = "off";
++			gpios = <&gpio3 RK_PC0 GPIO_ACTIVE_HIGH>;//green led
++		};
++	};
++
++	adc_keys: adc-keys {
++		status = "okay";
++		u-boot,dm-pre-reloc;
 +		compatible = "adc-keys";
-+		io-channels = <&saradc 0>;
++		io-channels = <&saradc 1>;
 +		io-channel-names = "buttons";
 +		keyup-threshold-microvolt = <1800000>;
-+		u-boot,dm-spl;
-+		status = "okay";
++		poll-interval = <100>;
 +
-+		volumeup-key {
-+			u-boot,dm-spl;
-+			linux,code = <KEY_VOLUMEUP>;
-+			label = "volume up";
-+			press-threshold-microvolt = <9>;
++		recovery-key{
++			u-boot,dm-pre-reloc;
++			label = "F12";
++			linux,code = <KEY_F12>;
++			press-threshold-microvolt = <17000>;
 +		};
 +	};
 +};
