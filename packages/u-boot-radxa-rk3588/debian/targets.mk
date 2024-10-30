@@ -141,6 +141,6 @@ orangepi-5-max-rk3588_bl31 := rk3588_bl31_v1.45.elf
 orangepi-5-max-rk3588_pkg := orangepi-5-max
 
 u-boot-rockchip_platforms += itx-3568q-rk3568j
-itx-3568q-rk3568j_ddr := rk3568_ddr_1056MHz_v1.13.bin
-itx-3568q-rk3568j_bl31 := rk3568_bl31_v1.43.elf
+itx-3568q-rk3568j_ddr := rk3568_ddr_1056MHz_v1.19.bin
+itx-3568q-rk3568j_bl31 := rk3568_bl31_v1.44.elf
 itx-3568q-rk3568j_pkg := itx-3568q
