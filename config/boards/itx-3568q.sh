@@ -4,8 +4,8 @@ export BOARD_NAME="ITX 3568Q"
 export BOARD_MAKER="Firefly"
 export BOARD_SOC="Rockchip RK3568J"
 export BOARD_CPU="ARM Cortex A55"
-export UBOOT_PACKAGE="u-boot-turing-rk3588"
-export UBOOT_RULES_TARGET="itx-3568q-rk3568j"
+export UBOOT_PACKAGE="u-boot-radxa-rk3588"
+export UBOOT_RULES_TARGET="rk3568"
 export COMPATIBLE_SUITES=("jammy" "noble")
 export COMPATIBLE_FLAVORS=("server" "desktop")
 
